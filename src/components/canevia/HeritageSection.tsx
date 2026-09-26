@@ -6,46 +6,39 @@ export function HeritageSection() {
       id="heritage"
       className="py-24 sm:py-36 px-6 sm:px-12 bg-[#080807] text-[#FAF7F0] relative overflow-hidden border-t border-[#22221E]"
     >
-      {/* Background Brand Watermark */}
-      <div className="absolute top-10 right-4 lg:right-16 text-[clamp(80px,14vw,220px)] font-display font-bold text-white/[0.015] tracking-tighter select-none pointer-events-none">
-        KOTHULE
-      </div>
-
       <div className="max-w-[1360px] mx-auto relative z-10">
-        {/* Header Block */}
-        <div className="max-w-2xl mb-20">
-          <div className="flex items-center gap-2 mb-3">
-            <span className="w-5 h-[1.5px] bg-[#D4AF37]" />
-            <span className="text-[10px] font-mono tracking-widest text-[#D4AF37] uppercase font-semibold">
-              Our Standards / Kothule Industries
-            </span>
+        <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1.25fr)_minmax(0,0.75fr)] items-center gap-12 lg:gap-16 mb-20">
+          <div>
+            <div className="flex items-center gap-2 mb-3">
+              <span className="w-5 h-[1.5px] bg-[#D4AF37]" />
+              <span className="text-[10px] font-mono tracking-widest text-[#D4AF37] uppercase font-semibold">
+                Our Standards / Kothule Industries
+              </span>
+            </div>
+
+            <h2 className="font-display font-semibold text-3xl sm:text-5xl lg:text-6xl text-white tracking-tight leading-[1.02] mb-6">
+              From the cane field, <br />
+              <em className="gold-shimmer not-italic font-normal">with absolute conviction.</em>
+            </h2>
+
+            <p className="text-xs sm:text-sm text-[#A8A49A] leading-relaxed">
+              CANEVIA was founded by Kothule Industries with a simple commitment: authentic Indian
+              jaggery should never be bleached with chemicals or diluted with glucose. We practice
+              traditional methods, using natural okra plant extract to clarify simmering cane juice
+              in woodfired iron vats.
+            </p>
           </div>
 
-          <h2 className="font-display font-semibold text-3xl sm:text-5xl lg:text-6xl text-white tracking-tight leading-[1.02] mb-6">
-            From the cane field, <br />
-            <em className="gold-shimmer not-italic font-normal">with absolute conviction.</em>
-          </h2>
-
-          <p className="text-xs sm:text-sm text-[#A8A49A] leading-relaxed">
-            CANEVIA was founded by Kothule Industries with a simple commitment: authentic Indian
-            jaggery should never be bleached with chemicals or diluted with glucose. We practice
-            traditional methods, using natural okra plant extract to clarify simmering cane juice in
-            woodfired iron vats.
-          </p>
-
-          <div className="mt-8 flex items-center gap-4 p-4 rounded-2xl bg-[#11110F] border border-[#242420] max-w-md">
+          <div className="flex flex-col items-center justify-center gap-5 border-t border-[#282824] pt-8 lg:border-t-0 lg:border-l lg:pt-0 lg:pl-12">
             <img
               src={brandAssets.kothuleMark}
-              alt="Kothule Industries Seal"
-              width={40}
-              height={56}
-              className="w-10 h-14 object-contain brightness-125 opacity-90"
+              alt="Kothule Industries seal"
+              width={176}
+              height={264}
+              className="w-32 h-48 sm:w-40 sm:h-60 lg:w-44 lg:h-66 shrink-0 object-contain brightness-125 opacity-90"
             />
-            <div className="flex flex-col text-xs text-[#706E66]">
-              <span className="text-white font-medium text-sm">
-                Estate Mill & Production
-              </span>
-              <span>Pune & Kolhapur Belt, Maharashtra · Est. 2022</span>
+            <div className="w-56 max-w-full border-y border-[#D4AF37]/35 px-4 py-3 text-center font-display text-xs sm:text-sm font-medium uppercase tracking-[0.16em] text-[#E4C66F]">
+              Kothule Industries
             </div>
           </div>
         </div>

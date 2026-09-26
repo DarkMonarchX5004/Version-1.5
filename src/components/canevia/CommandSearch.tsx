@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useNavigate } from "@tanstack/react-router";
-import { Search, Sparkles, ShieldCheck, ArrowRight, Package } from "lucide-react";
+import { Sparkles, ShieldCheck, ArrowRight, Package } from "lucide-react";
 import {
   CommandDialog,
   CommandEmpty,
@@ -37,13 +37,10 @@ export function CommandSearch() {
   return (
     <CommandDialog open={isSearchOpen} onOpenChange={setSearchOpen}>
       <div className="bg-[#0C0C0B] text-[#FAF7F0] border border-[#242420] rounded-2xl overflow-hidden shadow-[0_25px_80px_rgba(0,0,0,0.85)]">
-        <div className="flex items-center px-4 border-b border-[#1F1F1B]">
-          <Search className="w-4 h-4 text-[#D4AF37] mr-3 shrink-0" />
-          <CommandInput
-            placeholder="Search jaggery varieties, pairings, standards, FSSAI..."
-            className="h-14 bg-transparent text-xs sm:text-sm text-white placeholder:text-[#706E66] border-none outline-none focus:ring-0"
-          />
-        </div>
+        <CommandInput
+          placeholder="Search jaggery varieties, pairings, standards, FSSAI..."
+          className="h-14 bg-transparent text-xs sm:text-sm text-white placeholder:text-[#706E66] border-none outline-none focus:ring-0"
+        />
 
         <CommandList className="max-h-[380px] p-2 overflow-y-auto">
           <CommandEmpty className="py-8 text-center text-xs text-[#706E66]">

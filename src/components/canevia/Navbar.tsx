@@ -140,14 +140,11 @@ export function Navbar() {
               playTactileClick();
               setSearchOpen(true);
             }}
-            className="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-full text-xs text-[#A8A49A] bg-[#181815] hover:bg-[#22221E] transition-colors border border-[#282824] cursor-pointer"
+            className="hidden sm:flex h-9 w-[104px] items-center justify-center gap-2 rounded-full text-xs text-[#A8A49A] bg-[#181815] hover:bg-[#22221E] transition-colors border border-[#282824] cursor-pointer"
             aria-label="Open search command palette"
           >
             <Search className="w-3.5 h-3.5 text-[#D4AF37]" />
             <span className="text-[11px]">Search</span>
-            <kbd className="hidden lg:inline-block px-1.5 py-0.5 text-[9px] font-mono text-[#706E66] bg-[#0E0E0C] rounded-sm border border-[#2A2A24]">
-              ⌘K
-            </kbd>
           </button>
 
           <Button
