@@ -35,9 +35,10 @@ export function Hero() {
 
         {/* Subheadline */}
         <p className="text-sm sm:text-base lg:text-lg text-[#A8A49A] font-normal leading-relaxed max-w-xl mb-10">
-          Heirloom sugarcane grown along the riverbanks of Maharashtra. Clarified naturally with
-          organic okra juice, and slow-cooked in woodfired iron vats. Rich in natural iron and
-          magnesium. Zero chemical bleaching.
+          <strong className="block font-semibold text-white">Maharashtra Cane, Purely Crafted</strong>
+          <span className="block">
+            Okra-clarified, woodfired, mineral-rich, never bleached.
+          </span>
         </p>
 
         {/* Provenance Keynotes */}

@@ -61,7 +61,10 @@ export function ProductCard({ product, index = 0 }: { product: ProductDetails; i
         </h3>
 
         <p className="text-xs text-[#A8A49A] line-clamp-2 leading-relaxed mb-6 flex-1">
-          {product.description}
+          {product.descriptionHeadline && (
+            <strong className="block font-semibold text-white">{product.descriptionHeadline}</strong>
+          )}
+          <span className="block">{product.description}</span>
         </p>
 
         {/* Weight Selector Pill Group */}

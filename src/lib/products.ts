@@ -29,6 +29,7 @@ export interface ProductDetails {
   tagline: string;
   badge: string;
   note: string;
+  descriptionHeadline?: string;
   description: string;
   details: string;
   tastingNotes: string[];
@@ -64,8 +65,8 @@ export const products: Record<ProductId, ProductDetails> = {
     tagline: "Hand-carved amber cubes with deep caramel warmth and natural minerals.",
     badge: "Signature Reserve",
     note: "Hand-cut natural cubes",
-    description:
-      "Boiled slowly in open woodfired vats from single-estate sugarcane. Naturally cooled and carved by hand into amber cubes. Rich in molasses flavor, natural iron, and essential minerals.",
+    descriptionHeadline: "Hand-Carved Amber Cubes",
+    description: "Hand-carved, woodfire-cooked cubes rich in molasses, iron, and minerals.",
     details:
       "100% pure sugarcane jaggery. Clarified naturally with organic okra plant extract. Zero chemical bleaching, zero sulphur, and zero additives.",
     tastingNotes: [
@@ -170,8 +171,8 @@ export const products: Record<ProductId, ProductDetails> = {
     tagline: "Slow-cooked golden syrup with deep caramel flavor.",
     badge: "Patisserie Reserve",
     note: "Slow-cooked golden syrup",
-    description:
-      "Simmered gently over wood fires to a thick, pourable consistency. A rich golden syrup balancing natural sweetness with earthy caramel notes. Never blended with corn syrup or glucose.",
+    descriptionHeadline: "Woodfire-Reduced Golden Syrup",
+    description: "Woodfire-simmered caramel, without corn syrup or glucose.",
     details:
       "Pure unrefined sugarcane syrup. Poured directly into bottles without preservatives, colorants, or artificial thickeners.",
     tastingNotes: ["Rich Caramel", "Wild Honeycomb", "Ripe Date", "Warm Vanilla"],
@@ -307,8 +308,8 @@ export const gastronomicPairings = [
     productId: "cubes" as ProductId,
     category: "Specialty Coffee",
     notes: "Molasses & Dark Cacao",
-    recipe:
-      "Place a single jaggery cube in your cup. Brew a hot espresso directly over it. As it melts, it balances coffee acidity with smooth caramel sweetness.",
+    recipe: "Melt jaggery in espresso to soften acidity.",
+    recipeHeadline: "Caramel, Meet Coffee",
   },
   {
     id: "chai",
@@ -317,8 +318,8 @@ export const gastronomicPairings = [
     productId: "powder" as ProductId,
     category: "Tea & Spices",
     notes: "Warm Brown Butter & Spice",
-    recipe:
-      "Boil crushed cardamom, ginger, and black tea in milk and water. Stir in a spoonful of jaggery powder at the final boil. Smooth sweetness with zero curdling.",
+    recipe: "Add jaggery at the final boil for smooth, curdle-free spiced chai.",
+    recipeHeadline: "Spice, Sweetness, In Balance",
   },
   {
     id: "cocktail",
@@ -329,6 +330,7 @@ export const gastronomicPairings = [
     notes: "Caramel & Orange",
     recipe:
       "Stir 15ml of jaggery syrup with 3 dashes of aromatic bitters and 60ml of whiskey over ice. Garnish with an orange twist.",
+    recipeHeadline: "",
   },
   {
     id: "patisserie",
@@ -339,6 +341,7 @@ export const gastronomicPairings = [
     notes: "Honey & Toasted Grain",
     recipe:
       "Whip softened butter with two spoons of jaggery powder and a pinch of sea salt. Spread over warm, crusty sourdough.",
+    recipeHeadline: "",
   },
 ];
 

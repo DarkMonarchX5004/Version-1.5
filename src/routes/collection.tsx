@@ -55,9 +55,10 @@ function CollectionPage() {
               <em className="gold-shimmer not-italic font-normal">Collection.</em>
             </h1>
             <p className="text-xs sm:text-sm text-[#A8A49A] leading-relaxed">
-              Grown in mineral-rich riverbank soil in Maharashtra, clarified naturally with wild okra,
-              and slow-boiled in iron vats. Three pure textures made for coffee, tea, and everyday
-              cooking.
+              <strong className="block font-semibold text-white">Pure Cane, Three Textures</strong>
+              <span className="block">
+                Riverbank-grown Maharashtra cane meets wild okra, iron vats, and daily cooking.
+              </span>
             </p>
           </div>
 

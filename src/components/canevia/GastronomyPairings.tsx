@@ -100,7 +100,12 @@ export function GastronomyPairings() {
                 How to Prepare
               </span>
               <p className="text-xs sm:text-sm text-[#FAF7F0] leading-relaxed font-sans">
-                {activePairing.recipe}
+                {activePairing.recipeHeadline && (
+                  <strong className="block font-semibold text-white">
+                    {activePairing.recipeHeadline}
+                  </strong>
+                )}
+                <span className="block">{activePairing.recipe}</span>
               </p>
             </div>
 

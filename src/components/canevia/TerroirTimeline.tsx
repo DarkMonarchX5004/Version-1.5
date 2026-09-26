@@ -28,9 +28,10 @@ export function TerroirTimeline() {
             <em className="gold-shimmer font-normal not-italic">to pure gold.</em>
           </h2>
           <p className="text-xs sm:text-sm text-[#A8A49A] leading-relaxed">
-            Most commercial sugar is bleached with sulphur and stripped of nutrients. CANEVIA is made
-            with a traditional 4-step slow-cooking process that preserves natural minerals and authentic
-            flavor.
+            <strong className="block font-semibold text-white">Four Steps, Pure Craft</strong>
+            <span className="block">
+              Skip sulphur bleaching; slow cooking preserves minerals and authentic flavor.
+            </span>
           </p>
         </div>
 

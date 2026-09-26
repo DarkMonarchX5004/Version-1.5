@@ -22,10 +22,10 @@ export function HeritageSection() {
             </h2>
 
             <p className="text-xs sm:text-sm text-[#A8A49A] leading-relaxed">
-              CANEVIA was founded by Kothule Industries with a simple commitment: authentic Indian
-              jaggery should never be bleached with chemicals or diluted with glucose. We practice
-              traditional methods, using natural okra plant extract to clarify simmering cane juice
-              in woodfired iron vats.
+              <strong className="block font-semibold text-white">Kothule’s Cane, Purely Crafted</strong>
+              <span className="block">
+                Wild okra clarification, woodfire cooking, no bleach, glucose, or additives.
+              </span>
             </p>
           </div>
 
