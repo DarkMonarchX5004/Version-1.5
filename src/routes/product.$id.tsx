@@ -25,7 +25,6 @@ import {
   type ProductId,
   type Weight,
 } from "@/lib/products";
-import { playGoldResonance, playTactileClick } from "@/lib/sound-effects";
 
 export const Route = createFileRoute("/product/$id")({
   loader: ({ params }) => {
@@ -73,12 +72,10 @@ function ProductDetailPage() {
   }, []);
 
   const handleAddToCart = () => {
-    playGoldResonance();
     add(product.id, selectedWeight, quantity);
   };
 
   const handleDirectWhatsApp = () => {
-    playTactileClick();
     const text = `*CANEVIA — ORDER INQUIRY*\nProduct: *${product.name}* (${product.subtitle})\nPack Size: ${selectedWeight} × ${quantity}\nTotal: ${inr.format(totalPrice)}\n\nHi, I would like to order this. Please confirm availability and delivery.`;
     window.open(
       `https://wa.me/919922341509?text=${encodeURIComponent(text)}`,
@@ -98,7 +95,6 @@ function ProductDetailPage() {
             <Link
               to="/"
               className="hover:text-white transition-colors"
-              onClick={() => playTactileClick()}
             >
               Home
             </Link>
@@ -106,7 +102,6 @@ function ProductDetailPage() {
             <Link
               to="/collection"
               className="hover:text-white transition-colors"
-              onClick={() => playTactileClick()}
             >
               Products
             </Link>
@@ -139,10 +134,7 @@ function ProductDetailPage() {
                 <button
                   key={i}
                   type="button"
-                  onClick={() => {
-                    playTactileClick();
-                    setActiveImage(img);
-                  }}
+                  onClick={() => setActiveImage(img)}
                   className={`w-20 h-20 rounded-2xl bg-[#11110F] border p-2 flex items-center justify-center overflow-hidden transition-all cursor-pointer ${
                     activeImage === img
                       ? "border-[#D4AF37] ring-2 ring-[#D4AF37]/30 shadow-md scale-102"
@@ -211,10 +203,7 @@ function ProductDetailPage() {
                   <button
                     key={w}
                     type="button"
-                    onClick={() => {
-                      playTactileClick();
-                      setSelectedWeight(w);
-                    }}
+                    onClick={() => setSelectedWeight(w)}
                     className={`py-3.5 px-2 rounded-xl text-center border transition-all cursor-pointer ${
                       selectedWeight === w
                         ? "bg-[#D4AF37] text-[#080807] border-[#D4AF37] shadow-[0_0_15px_rgba(212,175,55,0.3)] font-bold"
@@ -241,7 +230,6 @@ function ProductDetailPage() {
                   <button
                     type="button"
                     onClick={() => {
-                      playTactileClick();
                       setQuantity(Math.max(1, quantity - 1));
                     }}
                     className="w-8 h-8 rounded-full flex items-center justify-center hover:bg-[#1C1C18] text-white cursor-pointer"
@@ -255,7 +243,6 @@ function ProductDetailPage() {
                   <button
                     type="button"
                     onClick={() => {
-                      playTactileClick();
                       setQuantity(quantity + 1);
                     }}
                     className="w-8 h-8 rounded-full flex items-center justify-center hover:bg-[#1C1C18] text-white cursor-pointer"
@@ -352,7 +339,6 @@ function ProductDetailPage() {
                 <button
                   type="button"
                   onClick={() => {
-                    playTactileClick();
                     setServingSize(100);
                   }}
                   className={`px-3.5 py-1 text-xs font-semibold rounded-lg transition-all cursor-pointer ${
@@ -364,7 +350,6 @@ function ProductDetailPage() {
                 <button
                   type="button"
                   onClick={() => {
-                    playTactileClick();
                     setServingSize(20);
                   }}
                   className={`px-3.5 py-1 text-xs font-semibold rounded-lg transition-all cursor-pointer ${

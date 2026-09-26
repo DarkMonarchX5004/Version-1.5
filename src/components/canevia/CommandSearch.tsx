@@ -11,7 +11,6 @@ import {
 } from "@/components/ui/command";
 import { useCart } from "@/lib/cart-context";
 import { products, purityPillars, type ProductId } from "@/lib/products";
-import { playTactileClick } from "@/lib/sound-effects";
 
 export function CommandSearch() {
   const { isSearchOpen, setSearchOpen, setB2BOpen, setBagOpen } = useCart();
@@ -29,7 +28,6 @@ export function CommandSearch() {
   }, [setSearchOpen]);
 
   const handleSelectProduct = (id: ProductId) => {
-    playTactileClick();
     setSearchOpen(false);
     navigate({ to: "/product/$id", params: { id } });
   };
@@ -79,7 +77,6 @@ export function CommandSearch() {
               <CommandItem
                 key={pillar.number}
                 onSelect={() => {
-                  playTactileClick();
                   setSearchOpen(false);
                   window.location.hash = "heritage";
                 }}
@@ -103,7 +100,6 @@ export function CommandSearch() {
           >
             <CommandItem
               onSelect={() => {
-                playTactileClick();
                 setSearchOpen(false);
                 setBagOpen(true);
               }}
@@ -117,7 +113,6 @@ export function CommandSearch() {
             </CommandItem>
             <CommandItem
               onSelect={() => {
-                playTactileClick();
                 setSearchOpen(false);
                 setB2BOpen(true);
               }}

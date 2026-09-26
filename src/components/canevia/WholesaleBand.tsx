@@ -1,7 +1,6 @@
 import { ArrowRight, Building2, ShieldCheck, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useCart } from "@/lib/cart-context";
-import { playTactileClick } from "@/lib/sound-effects";
 
 export function WholesaleBand() {
   const { setB2BOpen } = useCart();
@@ -48,7 +47,6 @@ export function WholesaleBand() {
         <Button
           size="lg"
           onClick={() => {
-            playTactileClick();
             setB2BOpen(true);
           }}
           data-cursor="WHOLESALE"

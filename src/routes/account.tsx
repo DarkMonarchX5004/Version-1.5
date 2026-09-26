@@ -15,7 +15,6 @@ import { Navbar } from "@/components/canevia/Navbar";
 import { Footer } from "@/components/canevia/Footer";
 import { useCart } from "@/lib/cart-context";
 import { brandAssets } from "@/lib/products";
-import { playTactileClick } from "@/lib/sound-effects";
 
 export const Route = createFileRoute("/account")({
   head: () => ({
@@ -74,7 +73,6 @@ function AccountPage() {
                     target="_blank"
                     rel="noreferrer"
                     className="flex items-center justify-between p-4 rounded-2xl bg-[#0A0A08] border border-[#242420] hover:border-[#D4AF37] transition-all group cursor-pointer"
-                    onClick={() => playTactileClick()}
                   >
                     <div className="flex items-center gap-3.5">
                       <MessageCircle className="w-5 h-5 text-[#D4AF37]" />
@@ -93,7 +91,6 @@ function AccountPage() {
                   <a
                     href="tel:+919922341509"
                     className="flex items-center justify-between p-4 rounded-2xl bg-[#0A0A08] border border-[#242420] hover:border-[#D4AF37] transition-all group cursor-pointer"
-                    onClick={() => playTactileClick()}
                   >
                     <div className="flex items-center gap-3.5">
                       <Phone className="w-5 h-5 text-[#D4AF37]" />
@@ -110,7 +107,6 @@ function AccountPage() {
                   <a
                     href="mailto:princegojo5004@gmail.com"
                     className="flex items-center justify-between p-4 rounded-2xl bg-[#0A0A08] border border-[#242420] hover:border-[#D4AF37] transition-all group cursor-pointer"
-                    onClick={() => playTactileClick()}
                   >
                     <div className="flex items-center gap-3.5">
                       <Mail className="w-5 h-5 text-[#D4AF37]" />
@@ -141,7 +137,6 @@ function AccountPage() {
                 <Button
                   className="rounded-full bg-[#D4AF37] hover:bg-[#EAD698] text-[#080807] text-xs font-semibold uppercase tracking-wider h-11 w-full sm:w-auto self-start transition-colors cursor-pointer"
                   onClick={() => {
-                    playTactileClick();
                     setB2BOpen(true);
                   }}
                 >
@@ -206,7 +201,6 @@ function AccountPage() {
                     variant="outline"
                     asChild
                     className="w-full rounded-full border-[#282824] bg-[#141412] hover:bg-[#1E1E1A] text-white text-xs font-semibold uppercase tracking-wider h-11 cursor-pointer"
-                    onClick={() => playTactileClick()}
                   >
                     <Link to="/collection">
                       Explore All Products{" "}

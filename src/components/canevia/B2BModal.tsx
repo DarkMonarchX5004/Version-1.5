@@ -12,7 +12,6 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useCart } from "@/lib/cart-context";
-import { playGoldResonance, playTactileClick } from "@/lib/sound-effects";
 
 export function B2BModal() {
   const { isB2BOpen, setB2BOpen } = useCart();
@@ -30,7 +29,6 @@ export function B2BModal() {
 
     const text = `*CANEVIA — WHOLESALE & BULK INQUIRY*\n_Kothule Industries, Pune_\n\n*CONTACT DETAILS*\nName: ${data.get("name")}\nCompany: ${data.get("company")}\nCity / Delivery Location: ${data.get("city")}\n\n*ORDER SCOPE*\nEstimated Volume: ${tier}\nNotes / Requirements: ${data.get("notes") || "Please send current wholesale pricing and sample details."}\n\nFSSAI Lic. No. 10022022000543`;
 
-    playGoldResonance();
     window.open(
       `https://wa.me/919922341509?text=${encodeURIComponent(text)}`,
       "_blank",
@@ -68,7 +66,6 @@ export function B2BModal() {
                   type="button"
                   key={item.weight}
                   onClick={() => {
-                    playTactileClick();
                     setTier(item.weight);
                   }}
                   className={`flex flex-col items-center justify-center p-3 rounded-xl border text-center transition-all cursor-pointer ${

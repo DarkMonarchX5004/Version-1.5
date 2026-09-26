@@ -2,7 +2,6 @@ import { Link } from "@tanstack/react-router";
 import { ArrowDownRight, ArrowRight, ShieldCheck, Sprout, Flame, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { brandAssets } from "@/lib/products";
-import { playTactileClick, playGoldResonance } from "@/lib/sound-effects";
 
 export function Hero() {
   return (
@@ -70,7 +69,6 @@ export function Hero() {
             size="lg"
             asChild
             className="rounded-full h-13 px-8 text-xs font-semibold uppercase tracking-wider bg-[#D4AF37] hover:bg-[#EAD698] text-[#080807] transition-all shadow-[0_8px_25px_rgba(212,175,55,0.35)] active:scale-95 cursor-pointer"
-            onClick={() => playGoldResonance()}
             data-cursor="SHOP"
           >
             <a href="#collection">
@@ -83,7 +81,6 @@ export function Hero() {
             variant="outline"
             asChild
             className="rounded-full h-13 px-7 text-xs font-semibold uppercase tracking-wider text-[#FAF7F0] hover:text-white bg-[#141412] hover:bg-[#1E1E1B] border border-[#282824] transition-all cursor-pointer"
-            onClick={() => playTactileClick()}
             data-cursor="PACKAGING"
           >
             <a href="#packaging">
@@ -118,7 +115,6 @@ export function Hero() {
         <a
           href="#packaging"
           className="flex items-center gap-1.5 text-[#D4AF37] hover:text-[#EAD698] transition-colors"
-          onClick={() => playTactileClick()}
         >
           <span>EXPLORE 3D PACKAGING</span>
           <ArrowDownRight className="w-3.5 h-3.5" />

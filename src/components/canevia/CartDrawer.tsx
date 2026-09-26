@@ -4,7 +4,6 @@ import { Sheet, SheetContent, SheetHeader, SheetTitle } from "@/components/ui/sh
 import { Button } from "@/components/ui/button";
 import { useCart } from "@/lib/cart-context";
 import { inr, products } from "@/lib/products";
-import { playTactileClick, playGoldResonance } from "@/lib/sound-effects";
 
 export function CartDrawer() {
   const { cart, count, subtotal, changeQuantity, remove, isBagOpen, setBagOpen, setCheckoutOpen } =
@@ -110,7 +109,6 @@ export function CartDrawer() {
                         <button
                           type="button"
                           onClick={() => {
-                            playTactileClick();
                             changeQuantity(item.id, item.weight, -1);
                           }}
                           className="w-6 h-6 flex items-center justify-center hover:bg-[#20201C] text-[#A8A49A] transition-colors cursor-pointer"
@@ -124,7 +122,6 @@ export function CartDrawer() {
                         <button
                           type="button"
                           onClick={() => {
-                            playTactileClick();
                             changeQuantity(item.id, item.weight, 1);
                           }}
                           className="w-6 h-6 flex items-center justify-center hover:bg-[#20201C] text-[#A8A49A] transition-colors cursor-pointer"
@@ -137,7 +134,6 @@ export function CartDrawer() {
                       <button
                         type="button"
                         onClick={() => {
-                          playTactileClick();
                           remove(item.id, item.weight);
                         }}
                         className="text-[#706E66] hover:text-[#C84A3B] transition-colors p-1 cursor-pointer"
@@ -183,7 +179,6 @@ export function CartDrawer() {
                 size="lg"
                 className="w-full rounded-full h-12 text-xs font-semibold uppercase tracking-wider bg-[#D4AF37] hover:bg-[#EAD698] text-[#080807] transition-all shadow-md active:scale-[0.99] cursor-pointer"
                 onClick={() => {
-                  playGoldResonance();
                   setBagOpen(false);
                   setCheckoutOpen(true);
                 }}

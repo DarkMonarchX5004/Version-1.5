@@ -5,7 +5,6 @@ import { Navbar } from "@/components/canevia/Navbar";
 import { Footer } from "@/components/canevia/Footer";
 import { ProductCard } from "@/components/canevia/ProductCard";
 import { products } from "@/lib/products";
-import { playTactileClick } from "@/lib/sound-effects";
 
 export const Route = createFileRoute("/search")({
   head: () => ({
@@ -77,7 +76,6 @@ function SearchPage() {
                 <button
                   type="button"
                   onClick={() => {
-                    playTactileClick();
                     setQuery("");
                   }}
                   className="p-1.5 text-[#706E66] hover:text-white transition-colors cursor-pointer"
@@ -96,7 +94,6 @@ function SearchPage() {
                   key={tag}
                   type="button"
                   onClick={() => {
-                    playTactileClick();
                     setQuery(tag);
                   }}
                   className="px-3 py-1 rounded-full bg-[#141412] text-[#A8A49A] hover:text-white border border-[#242420] hover:border-[#D4AF37]/40 transition-colors cursor-pointer text-[11px]"

@@ -1,30 +1,22 @@
 import { useState, useEffect } from "react";
 import { Link } from "@tanstack/react-router";
-import { ShoppingBag, Search, Menu, X, ArrowRight, Volume2, VolumeX, Sparkles } from "lucide-react";
+import { ShoppingBag, Search, Menu, X, ArrowRight, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useCart } from "@/lib/cart-context";
 import { brandAssets } from "@/lib/products";
-import { toggleAudioMaster, getAudioState, playTactileClick } from "@/lib/sound-effects";
 
 export function Navbar() {
   const { count, setBagOpen, setSearchOpen, setB2BOpen } = useCart();
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [soundEnabled, setSoundEnabled] = useState(false);
 
   useEffect(() => {
-    setSoundEnabled(getAudioState());
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 25);
     };
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
-  const handleSoundToggle = () => {
-    const newState = toggleAudioMaster();
-    setSoundEnabled(newState);
-  };
 
   return (
     <>
@@ -40,7 +32,6 @@ export function Navbar() {
           to="/"
           className="flex items-center gap-3 group focus:outline-none"
           aria-label="CANEVIA Sovereign Sugarcane Reserve"
-          onClick={() => playTactileClick()}
         >
           <img
             src={brandAssets.mark}
@@ -62,35 +53,30 @@ export function Navbar() {
           <Link
             to="/"
             className="text-xs font-semibold tracking-wider text-[#A8A49A] hover:text-white transition-colors"
-            onClick={() => playTactileClick()}
           >
             Overview
           </Link>
           <Link
             to="/collection"
             className="text-xs font-semibold tracking-wider text-[#A8A49A] hover:text-white transition-colors"
-            onClick={() => playTactileClick()}
           >
             Products
           </Link>
           <a
             href="/#packaging"
             className="text-xs font-semibold tracking-wider text-[#A8A49A] hover:text-white transition-colors"
-            onClick={() => playTactileClick()}
           >
             Packaging
           </a>
           <a
             href="/#heritage"
             className="text-xs font-semibold tracking-wider text-[#A8A49A] hover:text-white transition-colors"
-            onClick={() => playTactileClick()}
           >
             Purity & Process
           </a>
           <button
             type="button"
             onClick={() => {
-              playTactileClick();
               setB2BOpen(true);
             }}
             className="text-xs font-semibold tracking-wider text-[#A8A49A] hover:text-white transition-colors cursor-pointer"
@@ -100,44 +86,17 @@ export function Navbar() {
           <Link
             to="/account"
             className="text-xs font-semibold tracking-wider text-[#D4AF37] hover:text-[#EAD698] transition-colors"
-            onClick={() => playTactileClick()}
           >
             Contact
           </Link>
         </nav>
 
-        {/* Actions (Sound, Search, Bag, Mobile Toggle) */}
+        {/* Actions (Search, Bag, Mobile Toggle) */}
         <div className="flex items-center gap-2">
-          {/* Ambient Audio Toggle */}
-          <button
-            type="button"
-            onClick={handleSoundToggle}
-            className={`hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs transition-colors border cursor-pointer ${
-              soundEnabled
-                ? "bg-[#D4AF37]/15 text-[#D4AF37] border-[#D4AF37]/40 shadow-[0_0_10px_rgba(212,175,55,0.2)]"
-                : "bg-[#181815] text-[#706E66] border-[#282824] hover:text-[#A8A49A]"
-            }`}
-            title={soundEnabled ? "Mute ambient acoustics" : "Enable tactile & hearth acoustics"}
-            aria-label={soundEnabled ? "Mute sound" : "Enable sound"}
-          >
-            {soundEnabled ? (
-              <>
-                <Volume2 className="w-3.5 h-3.5 animate-pulse text-[#D4AF37]" />
-                <span className="text-[10px] font-mono uppercase tracking-wider">Sound On</span>
-              </>
-            ) : (
-              <>
-                <VolumeX className="w-3.5 h-3.5" />
-                <span className="text-[10px] font-mono uppercase tracking-wider">Sound</span>
-              </>
-            )}
-          </button>
-
           {/* Search Trigger */}
           <button
             type="button"
             onClick={() => {
-              playTactileClick();
               setSearchOpen(true);
             }}
             className="hidden sm:flex h-9 w-[104px] items-center justify-center gap-2 rounded-full text-xs text-[#A8A49A] bg-[#181815] hover:bg-[#22221E] transition-colors border border-[#282824] cursor-pointer"
@@ -152,7 +111,6 @@ export function Navbar() {
             size="icon"
             className="sm:hidden text-white hover:bg-white/10"
             onClick={() => {
-              playTactileClick();
               setSearchOpen(true);
             }}
             aria-label="Search"
@@ -165,7 +123,6 @@ export function Navbar() {
             variant="outline"
             className="relative flex items-center gap-2 rounded-full px-4 h-9 border-[#282824] bg-[#181815] hover:bg-[#22221E] text-white shadow-xs transition-transform active:scale-95 cursor-pointer"
             onClick={() => {
-              playTactileClick();
               setBagOpen(true);
             }}
             aria-label={`Open reserve bag with ${count} items`}

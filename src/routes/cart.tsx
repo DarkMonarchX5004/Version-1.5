@@ -14,7 +14,6 @@ import { Navbar } from "@/components/canevia/Navbar";
 import { Footer } from "@/components/canevia/Footer";
 import { useCart } from "@/lib/cart-context";
 import { inr, products } from "@/lib/products";
-import { playTactileClick, playGoldResonance } from "@/lib/sound-effects";
 
 export const Route = createFileRoute("/cart")({
   head: () => ({
@@ -115,7 +114,6 @@ function CartPage() {
                             <button
                               type="button"
                               onClick={() => {
-                                playTactileClick();
                                 changeQuantity(item.id, item.weight, -1);
                               }}
                               className="w-7 h-7 flex items-center justify-center hover:bg-[#1C1C18] text-[#A8A49A] transition-colors cursor-pointer"
@@ -129,7 +127,6 @@ function CartPage() {
                             <button
                               type="button"
                               onClick={() => {
-                                playTactileClick();
                                 changeQuantity(item.id, item.weight, 1);
                               }}
                               className="w-7 h-7 flex items-center justify-center hover:bg-[#1C1C18] text-[#A8A49A] transition-colors cursor-pointer"
@@ -142,7 +139,6 @@ function CartPage() {
                           <button
                             type="button"
                             onClick={() => {
-                              playTactileClick();
                               remove(item.id, item.weight);
                             }}
                             className="text-[#706E66] hover:text-[#C84A3B] transition-colors p-1.5 cursor-pointer"
@@ -210,7 +206,6 @@ function CartPage() {
                     size="lg"
                     className="w-full rounded-full h-13 text-xs font-semibold uppercase tracking-wider bg-[#D4AF37] hover:bg-[#EAD698] text-[#080807] transition-all shadow-[0_4px_20px_rgba(212,175,55,0.35)] active:scale-[0.99] cursor-pointer"
                     onClick={() => {
-                      playGoldResonance();
                       setCheckoutOpen(true);
                     }}
                   >

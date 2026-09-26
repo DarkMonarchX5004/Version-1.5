@@ -4,7 +4,6 @@ import { Coffee, Wine, Utensils, Sparkles, ArrowRight, Plus } from "lucide-react
 import { Button } from "@/components/ui/button";
 import { gastronomicPairings, products, inr } from "@/lib/products";
 import { useCart } from "@/lib/cart-context";
-import { playGoldResonance, playTactileClick } from "@/lib/sound-effects";
 
 export function GastronomyPairings() {
   const { add } = useCart();
@@ -54,7 +53,6 @@ export function GastronomyPairings() {
                 key={p.id}
                 type="button"
                 onClick={() => {
-                  playTactileClick();
                   setActiveId(p.id);
                 }}
                 data-cursor="SELECT"
@@ -123,7 +121,6 @@ export function GastronomyPairings() {
                 variant="outline"
                 className="rounded-full h-11 px-6 text-xs font-semibold uppercase tracking-wider text-white border-[#383830] hover:bg-white/10 transition-all cursor-pointer"
                 onClick={() => {
-                  playGoldResonance();
                   add(linkedProduct.id, "500g", 1);
                 }}
               >

@@ -2,7 +2,6 @@ import { Link } from "@tanstack/react-router";
 import { MessageCircle, Mail, Phone, ArrowUpRight, ShieldCheck, Sparkles } from "lucide-react";
 import { brandAssets, products } from "@/lib/products";
 import { useCart } from "@/lib/cart-context";
-import { playTactileClick } from "@/lib/sound-effects";
 
 export function Footer() {
   const { setB2BOpen } = useCart();
@@ -15,7 +14,6 @@ export function Footer() {
           <Link
             to="/"
             className="flex items-center gap-3 mb-6 focus:outline-none"
-            onClick={() => playTactileClick()}
             aria-label="CANEVIA Home"
           >
             <img
@@ -66,7 +64,6 @@ export function Footer() {
                   to="/product/$id"
                   params={{ id: product.id }}
                   className="hover:text-white transition-colors flex items-center justify-between group"
-                  onClick={() => playTactileClick()}
                 >
                   <span>{product.name}</span>
                   <ArrowUpRight className="w-3.5 h-3.5 opacity-0 group-hover:opacity-100 transition-opacity text-[#D4AF37]" />
@@ -77,7 +74,6 @@ export function Footer() {
               <Link
                 to="/collection"
                 className="hover:text-white transition-colors"
-                onClick={() => playTactileClick()}
               >
                 All Varieties
               </Link>
@@ -86,7 +82,6 @@ export function Footer() {
               <a
                 href="/#packaging"
                 className="hover:text-white transition-colors"
-                onClick={() => playTactileClick()}
               >
                 Packaging Details
               </a>
@@ -133,7 +128,6 @@ export function Footer() {
               target="_blank"
               rel="noreferrer"
               className="flex items-center gap-2 hover:text-[#D4AF37] transition-colors"
-              onClick={() => playTactileClick()}
             >
               <MessageCircle className="w-3.5 h-3.5 text-[#D4AF37]" />
               <span>WhatsApp (+91 99223 41509)</span>
@@ -141,7 +135,6 @@ export function Footer() {
             <a
               href="tel:+919922341509"
               className="flex items-center gap-2 hover:text-white transition-colors"
-              onClick={() => playTactileClick()}
             >
               <Phone className="w-3.5 h-3.5 text-[#D4AF37]" />
               <span>+91 99223 41509</span>
@@ -149,7 +142,6 @@ export function Footer() {
             <a
               href="mailto:princegojo5004@gmail.com"
               className="flex items-center gap-2 hover:text-white transition-colors"
-              onClick={() => playTactileClick()}
             >
               <Mail className="w-3.5 h-3.5 text-[#D4AF37]" />
               <span>princegojo5004@gmail.com</span>
@@ -157,7 +149,6 @@ export function Footer() {
             <button
               type="button"
               onClick={() => {
-                playTactileClick();
                 setB2BOpen(true);
               }}
               className="mt-2 text-left text-xs text-[#D4AF37] hover:text-[#EAD698] font-medium transition-colors cursor-pointer"

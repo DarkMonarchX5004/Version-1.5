@@ -19,7 +19,6 @@ import { Navbar } from "@/components/canevia/Navbar";
 import { Footer } from "@/components/canevia/Footer";
 import { useCart } from "@/lib/cart-context";
 import { inr, products } from "@/lib/products";
-import { playGoldResonance, playTactileClick } from "@/lib/sound-effects";
 
 export const Route = createFileRoute("/checkout")({
   head: () => ({
@@ -53,8 +52,6 @@ function CheckoutPage() {
 
     setInvoice(receipt);
     setStep("confirmation");
-    playGoldResonance();
-
     window.open(
       `https://wa.me/919922341509?text=${encodeURIComponent(receipt)}`,
       "_blank",
@@ -65,7 +62,6 @@ function CheckoutPage() {
 
   const copyInvoice = async () => {
     try {
-      playTactileClick();
       await navigator.clipboard.writeText(invoice);
       toast.success("Order details copied to clipboard.");
     } catch {
@@ -74,7 +70,6 @@ function CheckoutPage() {
   };
 
   const sendBackupEmail = () => {
-    playTactileClick();
     window.location.href = `mailto:princegojo5004@gmail.com?subject=${encodeURIComponent(
       "CANEVIA Order Details",
     )}&body=${encodeURIComponent(invoice)}`;
@@ -95,7 +90,6 @@ function CheckoutPage() {
             <Link
               to="/cart"
               className="inline-flex items-center gap-2 text-xs font-medium text-[#706E66] hover:text-[#D4AF37] transition-colors"
-              onClick={() => playTactileClick()}
             >
               <ArrowLeft className="w-3.5 h-3.5" /> Back to Bag
             </Link>

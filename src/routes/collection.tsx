@@ -5,7 +5,6 @@ import { Footer } from "@/components/canevia/Footer";
 import { ProductCard } from "@/components/canevia/ProductCard";
 import { WholesaleBand } from "@/components/canevia/WholesaleBand";
 import { products, type ProductId } from "@/lib/products";
-import { playTactileClick } from "@/lib/sound-effects";
 
 export const Route = createFileRoute("/collection")({
   head: () => ({
@@ -68,7 +67,6 @@ function CollectionPage() {
               <button
                 key={opt.id}
                 onClick={() => {
-                  playTactileClick();
                   setFilter(opt.id);
                 }}
                 className={`px-5 py-2.5 rounded-full text-xs font-semibold tracking-wider transition-all cursor-pointer ${

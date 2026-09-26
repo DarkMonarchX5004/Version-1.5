@@ -2,7 +2,6 @@ import { useState, useRef, type MouseEvent } from "react";
 import { Rotate3D, ShieldCheck, Sparkles, ChevronLeft, ChevronRight, Lock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { brandAssets } from "@/lib/products";
-import { playTactileClick } from "@/lib/sound-effects";
 
 export function PackagingInspector() {
   const [flipped, setFlipped] = useState(false);
@@ -35,7 +34,6 @@ export function PackagingInspector() {
   };
 
   const toggleFlip = () => {
-    playTactileClick();
     setFlipped((prev) => !prev);
   };
 
@@ -184,7 +182,6 @@ export function PackagingInspector() {
             <button
               type="button"
               onClick={() => {
-                playTactileClick();
                 setServing(100);
               }}
               className={`flex-1 py-1.5 text-xs font-semibold rounded-lg transition-all cursor-pointer ${
@@ -198,7 +195,6 @@ export function PackagingInspector() {
             <button
               type="button"
               onClick={() => {
-                playTactileClick();
                 setServing(20);
               }}
               className={`flex-1 py-1.5 text-xs font-semibold rounded-lg transition-all cursor-pointer ${

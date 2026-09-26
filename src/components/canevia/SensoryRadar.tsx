@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Sparkles, Layers, Flame, Droplets, Compass } from "lucide-react";
 import { products, type ProductId } from "@/lib/products";
-import { playTactileClick } from "@/lib/sound-effects";
 
 export function SensoryRadar() {
   const [activeId, setActiveId] = useState<ProductId | "all">("cubes");
@@ -94,7 +93,6 @@ export function SensoryRadar() {
               key={id}
               type="button"
               onClick={() => {
-                playTactileClick();
                 setActiveId(id);
               }}
               data-cursor="COMPARE"

@@ -634,52 +634,6 @@ var Utensils = createLucideIcon("utensils", [
 * This source code is licensed under the ISC license.
 * See the LICENSE file in the root directory of this source tree.
 */
-var Volume2 = createLucideIcon("volume-2", [
-	["path", {
-		d: "M11 4.702a.705.705 0 0 0-1.203-.498L6.413 7.587A1.4 1.4 0 0 1 5.416 8H3a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2.416a1.4 1.4 0 0 1 .997.413l3.383 3.384A.705.705 0 0 0 11 19.298z",
-		key: "uqj9uw"
-	}],
-	["path", {
-		d: "M16 9a5 5 0 0 1 0 6",
-		key: "1q6k2b"
-	}],
-	["path", {
-		d: "M19.364 18.364a9 9 0 0 0 0-12.728",
-		key: "ijwkga"
-	}]
-]);
-/**
-* @license lucide-react v0.575.0 - ISC
-*
-* This source code is licensed under the ISC license.
-* See the LICENSE file in the root directory of this source tree.
-*/
-var VolumeX = createLucideIcon("volume-x", [
-	["path", {
-		d: "M11 4.702a.705.705 0 0 0-1.203-.498L6.413 7.587A1.4 1.4 0 0 1 5.416 8H3a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2.416a1.4 1.4 0 0 1 .997.413l3.383 3.384A.705.705 0 0 0 11 19.298z",
-		key: "uqj9uw"
-	}],
-	["line", {
-		x1: "22",
-		x2: "16",
-		y1: "9",
-		y2: "15",
-		key: "1ewh16"
-	}],
-	["line", {
-		x1: "16",
-		x2: "22",
-		y1: "9",
-		y2: "15",
-		key: "5ykzw1"
-	}]
-]);
-/**
-* @license lucide-react v0.575.0 - ISC
-*
-* This source code is licensed under the ISC license.
-* See the LICENSE file in the root directory of this source tree.
-*/
 var Wine = createLucideIcon("wine", [
 	["path", {
 		d: "M8 22h8",
@@ -712,4 +666,4 @@ var X = createLucideIcon("x", [["path", {
 	key: "d8bk6v"
 }]]);
 //#endregion
-export { ChevronLeft as A, Flame as C, Clock as D, Coffee as E, ArrowLeft as F, ArrowDownRight as I, Building2 as M, ArrowUpRight as N, Clipboard as O, ArrowRight as P, Layers as S, Compass as T, Minus as _, Utensils as a, Mail as b, Sprout as c, ShieldCheck as d, Search as f, Package as g, Phone as h, Volume2 as i, Check as j, ChevronRight as k, Sparkles as l, Plus as m, Wine as n, Trash2 as o, Rotate3d as p, VolumeX as r, Star as s, X as t, ShoppingBag as u, MessageCircle as v, Droplets as w, Lock as x, Menu as y };
+export { Building2 as A, Compass as C, ChevronRight as D, Clipboard as E, ArrowRight as M, ArrowLeft as N, ChevronLeft as O, ArrowDownRight as P, Droplets as S, Clock as T, Menu as _, Star as a, Layers as b, ShoppingBag as c, Rotate3d as d, Plus as f, MessageCircle as g, Minus as h, Trash2 as i, ArrowUpRight as j, Check as k, ShieldCheck as l, Package as m, Wine as n, Sprout as o, Phone as p, Utensils as r, Sparkles as s, X as t, Search as u, Mail as v, Coffee as w, Flame as x, Lock as y };

@@ -4,7 +4,6 @@ import { Plus, ArrowRight, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useCart } from "@/lib/cart-context";
 import { inr, weights, type ProductDetails, type Weight } from "@/lib/products";
-import { playGoldResonance, playTactileClick } from "@/lib/sound-effects";
 
 export function ProductCard({ product, index = 0 }: { product: ProductDetails; index?: number }) {
   const { add } = useCart();
@@ -32,7 +31,6 @@ export function ProductCard({ product, index = 0 }: { product: ProductDetails; i
         to="/product/$id"
         params={{ id: product.id }}
         className="relative block aspect-square w-full overflow-hidden bg-[#0A0A09] p-6 focus:outline-none"
-        onClick={() => playTactileClick()}
       >
         <div className="absolute inset-0 bg-radial from-[#D4AF37]/10 via-[#D4AF37]/2 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
         <img
@@ -54,7 +52,6 @@ export function ProductCard({ product, index = 0 }: { product: ProductDetails; i
             to="/product/$id"
             params={{ id: product.id }}
             className="hover:text-[#D4AF37] transition-colors"
-            onClick={() => playTactileClick()}
           >
             {product.name}
           </Link>
@@ -78,7 +75,6 @@ export function ProductCard({ product, index = 0 }: { product: ProductDetails; i
               key={weight}
               type="button"
               onClick={() => {
-                playTactileClick();
                 setSelectedWeight(weight);
               }}
               className={`flex-1 py-1.5 text-xs font-semibold rounded-lg transition-all cursor-pointer ${
@@ -109,7 +105,6 @@ export function ProductCard({ product, index = 0 }: { product: ProductDetails; i
               variant="outline"
               asChild
               className="rounded-full px-3.5 text-xs border-[#2A2A24] bg-[#161613] hover:bg-[#20201C] text-[#FAF7F0] cursor-pointer"
-              onClick={() => playTactileClick()}
             >
               <Link to="/product/$id" params={{ id: product.id }}>
                 Details <ArrowRight className="w-3 h-3 ml-1" />
@@ -120,7 +115,6 @@ export function ProductCard({ product, index = 0 }: { product: ProductDetails; i
               size="sm"
               className="rounded-full px-4 text-xs bg-[#D4AF37] text-[#080807] hover:bg-[#EAD698] font-semibold transition-all shadow-[0_4px_15px_rgba(212,175,55,0.3)] active:scale-95 cursor-pointer"
               onClick={() => {
-                playGoldResonance();
                 add(product.id, selectedWeight);
               }}
               data-cursor="ADD"

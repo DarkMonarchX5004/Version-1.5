@@ -13,7 +13,6 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useCart } from "@/lib/cart-context";
 import { inr, products } from "@/lib/products";
-import { playGoldResonance, playTactileClick } from "@/lib/sound-effects";
 
 export function CheckoutModal() {
   const { cart, subtotal, clear, isCheckoutOpen, setCheckoutOpen } = useCart();
@@ -35,8 +34,6 @@ export function CheckoutModal() {
     const receipt = `*CANEVIA — ORDER DETAILS*\n_Pure Sugarcane Jaggery_\n\n*CUSTOMER DETAILS*\nName: ${data.get("name")}\nPhone: ${data.get("phone")}\nEmail: ${data.get("email")}\nShipping Address: ${data.get("address")}\n\n*ITEMS ORDERED*\n${lines}\n\n*SUBTOTAL: ${inr.format(subtotal)}*\n\nPlease confirm shipping and payment details.\nFSSAI Lic. No. 10022022000543 · Kothule Industries, Pune`;
 
     setInvoice(receipt);
-    playGoldResonance();
-
     window.open(
       `https://wa.me/919922341509?text=${encodeURIComponent(receipt)}`,
       "_blank",
@@ -47,7 +44,6 @@ export function CheckoutModal() {
 
   const copyInvoice = async () => {
     try {
-      playTactileClick();
       await navigator.clipboard.writeText(invoice);
       toast.success("Order summary copied to clipboard.");
     } catch {
@@ -56,7 +52,6 @@ export function CheckoutModal() {
   };
 
   const sendBackupEmail = () => {
-    playTactileClick();
     window.location.href = `mailto:princegojo5004@gmail.com?subject=${encodeURIComponent(
       "CANEVIA Order Details",
     )}&body=${encodeURIComponent(invoice)}`;

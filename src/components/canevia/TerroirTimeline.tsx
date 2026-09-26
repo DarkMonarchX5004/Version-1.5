@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Thermometer, Clock, ShieldCheck, Flame, ArrowRight } from "lucide-react";
 import { alchemyProcessSteps } from "@/lib/products";
-import { playTactileClick } from "@/lib/sound-effects";
 
 export function TerroirTimeline() {
   const [activeStepIndex, setActiveStepIndex] = useState(0);
@@ -42,7 +41,6 @@ export function TerroirTimeline() {
               key={step.step}
               type="button"
               onClick={() => {
-                playTactileClick();
                 setActiveStepIndex(idx);
               }}
               data-cursor={`STEP 0${idx + 1}`}
@@ -121,7 +119,6 @@ export function TerroirTimeline() {
               <button
                 type="button"
                 onClick={() => {
-                  playTactileClick();
                   setActiveStepIndex((prev) => (prev + 1) % alchemyProcessSteps.length);
                 }}
                 className="p-2 rounded-full bg-[#181815] hover:bg-[#D4AF37] hover:text-[#080807] transition-colors border border-[#2A2A24] cursor-pointer"

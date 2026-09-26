@@ -3,7 +3,6 @@ import { ArrowRight, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { products } from "@/lib/products";
 import { ProductCard } from "./ProductCard";
-import { playTactileClick } from "@/lib/sound-effects";
 
 export function CollectionSection() {
   return (
@@ -36,7 +35,6 @@ export function CollectionSection() {
               variant="outline"
               asChild
               className="rounded-full px-6 h-11 text-xs font-semibold uppercase tracking-wider border-[#2C2C26] bg-[#141412] hover:bg-[#1C1C19] text-white cursor-pointer"
-              onClick={() => playTactileClick()}
             >
               <Link to="/collection">
                 View All Varieties <ArrowRight className="w-3.5 h-3.5 ml-2 text-[#D4AF37]" />
